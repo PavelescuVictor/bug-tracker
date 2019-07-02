@@ -1,0 +1,106 @@
+	
+	Cazuri de utilizare:
+	
+
+					Nume: 	Register bug
+
+	Participanti: Tester
+	Flux evenimente:		Testerul activeaza functia de inregistrare bug
+							Sistemul afiseaza formul de creare bug
+							Testerul introduce datele in formul de creare a bugului
+							Sistemul primeste datele din formular si actualizeaza lista de buguri
+							Sistemul afiseaza o notificare
+
+							Daca datele din formular sunt invalide, sistemul afiseaza o notificare
+	Conditii de intrare: 	Tester trebuie sa fie logat in sistem
+	Conditii de iesire: 	Confirmarea inregistrarii bugului
+	Cerinte de calitate: 
+	______________________________________________________________________________________________________________
+
+					Nume: 	Consultare bug list
+
+	Participanti: 			Programator
+	Flux evenimente: 
+							Programatorul activeaza functia de vizualizare buguri
+							Sistemul afiseaza lista de buguri cu status unresolved (by default)
+	Conditii de intrare: 	Programatorul trebuie sa fie logat in sistem
+	Conditii de iesire: 
+	Cerinte de calitate: 
+	_______________________________________________________________________________________________________________
+
+					Nume: 	Rezolvare bug selectat
+
+	Participanti: 			Programator
+	Flux evenimente: 		Programatorul selecteaza un bug din lista de buguri
+							Programatorul activeaza functia de rezolvare bug
+							Sistemul modifica statusul bugului selectat din unresolved in resolved
+							Sistemul afiseaza o notificare a modificarii statusului
+							Sistemul redirectioneaza programatorul catre pagina de vizualizare buguri
+	Conditii de intrare:	Programatorul este logat in sistemul
+							Programatorul a consultat lista de buguri
+	Conditii de iesire: 	Programatorul primeste notificarea si este redirectionat la 
+							pagina de vizualizare buguri
+	Cerinte de calitate:  
+	_________________________________________________________________________________________________________________
+
+					Nume:	Check User Identity
+
+	Actori participanti: 	Tester, Programator, Admin
+	Flux de evenimente: 	Utilizatorul activeaza functia de login
+							Sistemul afizeaza formularul de login
+							Utilizatorul introduce datele personale
+							Sistemul verifica datele in baza de date
+							Sistemul redirectioneaza utilizatorul catre pagina principala
+							In caz de date eronate sistemul afiseaza o notificare
+	Conditii de intrare:
+	Conditii de iesire: 	Utilizatorul a fost logat si redirectionat catre pagina de pornire sau a primit o 
+							otificare daca datele nu sunt valide
+	Cerinte de calitate:
+	________________________________________________________________________________________________________________
+
+					Nume: 	Consult User accounts
+
+	Actori participanti: 	Admin
+	Flux de evenimente: 	Adminul activeaza functia de consultare liste utilizatori
+							Sistemul afizeaza lista utilizatorilor
+	Conditii de intrare:	Adminiul este logat in sistem
+	Conditii de iesire:
+	Cerinte de calitate:
+	_________________________________________________________________________________________________________________
+	
+					Nume: 	Delete user
+
+	Actori: Admin
+	Flux de evenimente: 	Adminul din lista de utilizatori selecteaz un utilizator
+							Adminul activeaza functia de stergere utilizator
+							Sistemul sterge utilizatorul de baza de date si reactualizeaza lista de utilizatori
+	Conditii de intrare:	Adminul este logat in sistem si a consultat lista de utilizatori
+	Codnitii de iesire: 
+	Cerinte de calitate
+	__________________________________________________________________________________________________________________
+
+					Nume: 	Update user
+
+	Actori: Admin
+	Flux de evenimente: 	Adminul din lista de utilizatori selecteaz un utilizator
+							Adminul activeaza functia de actualizare utilizator
+							Sistemul afiseaza formularul de update
+							Adminul introduce datele in formular
+							Sistemul sterge utilizatorul de baza de date si reactualizeaza lista de utilizatori
+	Conditii de intrare: 	Adminul este logat in sistem si a consultat lista de utilizatori
+	Codnitii de iesire: 
+	Cerinte de calitate
+	___________________________________________________________________________________________________________________
+
+					Nume: 	Create user
+
+	Actori: Admin
+	Flux de evenimente: 	Adminul din lista de utilizatori selecteaz un utilizator
+							Adminul activeaza functia de creeare utilizator
+							Sistemul afiseaa formularul de inregistrare
+							Adminul introduce datele in formular
+							Sistemul inregistreaza utilizatorul in baza de date si reactualizeaza lista de utilizatori
+	Conditii de intrare: 	Adminul este logat in sistem si a consultat lista de utilizatori
+	Codnitii de iesire: 
+	Cerinte de calitate
+	____________________________________________________________________________________________________________________
