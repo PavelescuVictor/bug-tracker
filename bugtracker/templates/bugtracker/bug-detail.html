@@ -1,0 +1,25 @@
+{% extends "bugtracker/Base.html" %}
+{% block content %}
+  <article class="media content-section">
+    <div class="media-body">
+      <div class="article-metadata">
+        <a class="mr-2">Username: {{ object.author }},</a>
+        <small class="text-muted">Register date: {{ object.register_date|date:"F d, Y" }},</small>
+        <small class="text-muted">Solved date: {{ object.solved_date|date:"F d, Y" }}</small>
+      </div>
+      <h2 class="article-title">{{ object.title }}</h2>
+      <p class="article-content">Description: {{ object.description }}</p>
+      <p class="article-content">Status: {{ object.status }}</p>
+      {% if object.status == "resolved" and user.groups.all.0.name == 'Programmers' %}
+          <div>
+            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'bug-update' object.id %}">Update</a>
+            <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'bug-delete' object.id %}">Delete</a>
+          </div>
+      {% elif object.status == "unresolved" and user.groups.all.0.name == 'Programmers' %}
+          <div>
+            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'bug-update' object.id %}">Update</a>
+          </div>
+      {% endif %}
+    </div>
+  </article>
+{% endblock content %}

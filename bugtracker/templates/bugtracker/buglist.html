@@ -1,0 +1,16 @@
+{% extends "bugtracker/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    {% for bug in bugs %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">{{ bug.author }}</a>
+              <small class="text-muted">{{ bug.date_posted|date:"F d, Y" }}</small>
+            </div>
+            <h2><a class="article-title" href="{% url 'bug-detail' bug.id %}">{{ bug.title }}</a></h2>
+            <p class="article-content">{{ bug.description }}</p>
+          </div>
+        </article>
+    {% endfor %}
+{% endblock content %}
